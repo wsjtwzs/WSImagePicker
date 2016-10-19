@@ -10,7 +10,7 @@
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DB6313A7-892D-4A6F-B01D-BF89E26063D0",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "65E44FAD727851099702505E736C1D8A51419335" : "WSImagePickerDemo\/",
-    "F6DE7D672E948E559F33BFF3775DF56D2A8270C4" : ""
+    "F6DE7D672E948E559F33BFF3775DF56D2A8270C4" : "WSImagePicker\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "WSImagePicker",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,

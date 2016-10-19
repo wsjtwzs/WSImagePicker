@@ -21,10 +21,10 @@
 
 @interface WSImagePickerConfig : NSObject
 
-@property (nonatomic, assign) CGSize itemSize; //默认CGSizeMake(70, 70);
-@property (nonatomic, assign) UIEdgeInsets sectionInset; //默认UIEdgeInsetsMake(10, 10, 10, 10);
-@property (nonatomic, assign) CGFloat minimumLineSpacing; //默认10.0f;
-@property (nonatomic, assign) CGFloat minimumInteritemSpacing; //默认10.0f;
+@property (nonatomic, assign) CGSize itemSize; //每张图片的缩略图尺寸 默认CGSizeMake(60, 60);
+@property (nonatomic, assign) UIEdgeInsets sectionInset; //距离上下左右的边距 默认UIEdgeInsetsMake(10, 10, 10, 10);
+@property (nonatomic, assign) CGFloat minimumLineSpacing; //最小行高 默认10.0f;
+@property (nonatomic, assign) CGFloat minimumInteritemSpacing; //最小列宽 默认10.0f;
 @property (nonatomic, assign) NSInteger photosMaxCount; //最多选择照片张数 默认9张
 
 @end

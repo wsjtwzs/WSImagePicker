@@ -22,23 +22,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupView];
+    [self setupPickerView];
 }
-- (void)setupView {
+- (void)setupPickerView {
     
-    __weak typeof(self) weakSelf = self;
+    //imagePickerView parameter settings
+    WSImagePickerConfig *config = [WSImagePickerConfig new];
+    config.itemSize = CGSizeMake(80, 80);
+    config.photosMaxCount = 9;
     
-    WSImagePickerView *pickerView = [[WSImagePickerView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0)];
+    WSImagePickerView *pickerView = [[WSImagePickerView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0) config:config];
+    //Height changed with photo selection
+     __weak typeof(self) weakSelf = self;
     pickerView.viewHeightChanged = ^(CGFloat height) {
         weakSelf.photoViewHieghtConstraint.constant = height;
         [weakSelf.view setNeedsLayout];
         [weakSelf.view layoutIfNeeded];
     };
-    // 刷新photoView 高度
-    [pickerView refreshImagePickerViewWithPhotoArray:nil];
     pickerView.navigationController = self.navigationController;
-    [_photoView addSubview:pickerView];
-    _pickerView = pickerView;
+    [self.photoView addSubview:pickerView];
+    self.pickerView = pickerView;
+    
+    //refresh superview height
+    [pickerView refreshImagePickerViewWithPhotoArray:nil];
 }
 
 - (IBAction)onClickConfirm:(id)sender {
